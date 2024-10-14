@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="/item1" id="form1" method="post">
+            <h1>Plus</h1>
+            <input type="number" class="nums" placeholder="enter a number">
+            <input type="number" class="nums" placeholder="enter a number">
+            <button type="submit">submit</button>
+        </form>
+        <form action="/item2" id="form2" method="post">
+            <h1>Minus</h1>
+            <input type="number" class="nums" placeholder="enter a number">
+            <input type="number" class="nums" placeholder="enter a number">
+            <button type="submit">submit</button>
+        </form>
+        <form action="/item3" id="form3" method="post">
+            <h1>times</h1>
+            <input type="number" class="nums" placeholder="enter a number">
+            <input type="number" class="nums" placeholder="enter a number">
+            <button type="submit">submit</button>
+        </form>
+        <form action="/item4" id="form4" method="post">
+            <h1>division</h1>
+            <input type="number" class="nums" placeholder="enter a number">
+            <input type="number" class="nums" placeholder="enter a number">
+            <button type="submit">submit</button>
+            
+        </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const [item1, item2, item3, item4] = [document.getElementById("form1"), document.getElementById("form2"), document.getElementById("form3"), document.getElementById("form4")]
+        const nums = document.getElementsByClassName("nums");
+        const socket = io()
+
+        item1.addEventListener("submit", (e) => {
+            e.preventDefault()
+            if(nums[0].value || nums[1].value){
+                let target = Number.parseInt(nums[0].value) + Number.parseInt(nums[1].value)
+                socket.emit("plus", target)
+            }
+            nums[0].value = ""
+            nums[1].value = ""
+        })
+        item2.addEventListener("submit", (e) => {
+            e.preventDefault()
+            if(nums[2].value || nums[3].value){
+                let target = Number.parseInt(nums[2].value) - Number.parseInt(nums[3].value)
+                socket.emit("minus", target)
+            }
+            nums[2].value = ""
+            nums[3].value = ""
+        })
+        item3.addEventListener("submit", (e) => {
+            e.preventDefault()
+            if(nums[4].value || nums[5].value){
+                let target = Number.parseInt(nums[4].value) * Number.parseInt(nums[5].value)
+                socket.emit("times", target)
+            }
+            nums[4].value = ""
+            nums[5].value = ""
+        })
+        item4.addEventListener("submit", (e) => {
+            e.preventDefault()
+            if(nums[6].value || nums[7].value){
+                let target = Number.parseInt(nums[6].value) / Number.parseInt(nums[7].value)
+                socket.emit("division", target)
+            }
+            nums[6].value = ""
+            nums[7].value = ""
+        })
+    </script>
+</body>
+</html>
