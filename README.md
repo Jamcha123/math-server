@@ -7,4 +7,6 @@ math-api is a expressjs api that works out the:
   4. divison
 of two numbers
 
-run ``ǹode .``` to start
+first clone it to vscode.
+
+them run ```ǹode .``` to start.
