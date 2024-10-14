@@ -1,0 +1,28 @@
+{
+  "name": "math-api",
+  "version": "1.0.0",
+  "description": "math-api is a expressjs api that works out the:   1. sum   2. mulitple   3. minus   4. divison of two numbers",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamcha123/math-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jamcha123/math-api/issues"
+  },
+  "homepage": "https://github.com/Jamcha123/math-api#readme",
+  "dependencies": {
+    "connect": "^3.7.0",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "socket.io": "^4.8.0",
+    "vhost": "^3.0.2"
+  }
+}
