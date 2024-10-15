@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
@@ -40,7 +41,6 @@
         const socket = io()
 
         item1.addEventListener("submit", (e) => {
-            e.preventDefault()
             if(nums[0].value || nums[1].value){
                 let target = Number.parseInt(nums[0].value) + Number.parseInt(nums[1].value)
                 socket.emit("plus", target)
@@ -49,7 +49,6 @@
             nums[1].value = ""
         })
         item2.addEventListener("submit", (e) => {
-            e.preventDefault()
             if(nums[2].value || nums[3].value){
                 let target = Number.parseInt(nums[2].value) - Number.parseInt(nums[3].value)
                 socket.emit("minus", target)
@@ -58,7 +57,6 @@
             nums[3].value = ""
         })
         item3.addEventListener("submit", (e) => {
-            e.preventDefault()
             if(nums[4].value || nums[5].value){
                 let target = Number.parseInt(nums[4].value) * Number.parseInt(nums[5].value)
                 socket.emit("times", target)
@@ -67,7 +65,6 @@
             nums[5].value = ""
         })
         item4.addEventListener("submit", (e) => {
-            e.preventDefault()
             if(nums[6].value || nums[7].value){
                 let target = Number.parseInt(nums[6].value) / Number.parseInt(nums[7].value)
                 socket.emit("division", target)
