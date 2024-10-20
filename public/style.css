@@ -3,32 +3,73 @@ body{
     background-color: rgb(30, 30, 30);
     overflow: hidden;
 }
+.navbar{
+    position: fixed;
+    width: 10em;
+    height: 100vh;
+    margin: auto;
+    padding: 0;
+    z-index: 99;
+}
+.bar{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+}
+.navbar .bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    list-style-type: none;
+}
+li{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    text-decoration: underline;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+li:active{
+    color: black;
+}
 .container{
     position: absolute;
     width: 100%;
     height: 50%;
     margin: auto;
     padding: 0;
+    z-index: 98;
 }
-.container, form{
+.container, form, .cover{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
 }
-.container{
+.container, form, .cover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-form{
+form, .cover{
     width: 20em;
     height: 100%;
     margin: auto;
     padding: 0;
-    position: relative;
+    position: fixed;
+    transition: all 1s;
     flex-direction: column;
+    background-color: rgb(30, 30, 30);
+}
+.cover{
+    width: 21em;
+    z-index: 100;
 }
 h1, input, button{
     font-weight: 300;
